@@ -1,0 +1,151 @@
+        /* Variáveis de Cores */
+        :root {
+            --cor-fundo: #E5E5E5; /* Cinza claro da tela de fundo */
+            --cor-principal: #1E90FF; /* Azul claro/forte */
+            --cor-card: #FFFFFF; /* Branco do card de login */
+            --cor-texto-principal: #000000;
+            --cor-link: #FF0000; /* Vermelho para "Esqueci minha senha" */
+            --cor-input-cinza: #C0C0C0; /* Cinza para os placeholders/inputs */
+        }
+
+        /* Estilos Globais e Body */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cor-fundo);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            /* padding: 20px; */
+            /* box-sizing: border-box; */
+            /* border: 15px solid #000000;*/
+        }
+
+        /* Container Principal */
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 900px;
+            width: 90vw;
+        }
+
+        /* Título e Dente */
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* margin-bottom: 60%; */
+            position: relative;
+            bottom: 180px;
+            /* top: 10%; */
+            /* width: 100%; */
+            /* max-width: 650px; */
+            min-height: 100px;
+            background-color: var(--cor-principal);
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-title {
+            color: var(--cor-card); /* Texto branco */
+            font-size: clamp(24px, 4vw, 48px); /* Responsividade do título (48px) */
+            font-weight: 700;
+            padding: 10px;
+            text-align: center;
+            /* Posição relativa para o título ficar no centro, acima da imagem */
+            z-index: 2; 
+        }
+
+        .tooth-image-header {
+            position: absolute;
+            right: 45%;
+            max-width: 150%;
+            transform: scale(1.3);
+            /* width: clamp(80px, 15vw, 150px); */
+            top: 15%;
+            /* height: auto; */
+            z-index: -1;
+            /* opacity: 0.8;*/
+        }
+
+        /* Card de Login */
+        .login-card {
+            background-color: var(--cor-card);
+            padding: clamp(20px, 5vw, 40px);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: clamp(280px, 50vw, 400px);
+            display: flex;
+            bottom: 15%;
+            /* position: absolute; */
+            flex-direction: column;
+            position: relative;
+            /* margin-top: 10px; */
+            z-index: 3;
+            position: absolute;
+            /* top: 50%; */
+
+        }
+
+        .form-group {
+            margin-bottom: clamp(10px, 1.5vw, 20px);
+        }
+
+        label {
+            display: block;
+            color: var(--cor-texto-principal);
+            font-size: clamp(20px, 3vw, 36px); /* 36px para texto de login/senha */
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .input-placeholder {
+            /* Simula a barra cinza de input */
+            background-color: var(--cor-input-cinza);
+            height: clamp(20px, 3.5vw, 30px);
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        .forgot-password {
+            font-size: clamp(12px, 1.5vw, 16px); /* 16px para "Esqueci minha senha" */
+            color: var(--cor-link);
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end; /* Alinha o botão à direita */
+            margin-top: 20px;
+        }
+
+        .login-button {
+            background-color: var(--cor-principal);
+            color: var(--cor-card);
+            border: none;
+            padding: clamp(5px, 1vw, 10px) clamp(20px, 4vw, 30px);
+            font-size: clamp(14px, 1.8vw, 18px); /* 18px para o botão */
+            font-weight: 700;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ajuste fino para dispositivos menores */
+        @media (max-width: 600px) {
+            .header-content {
+                min-height: 80px;
+                position: relative;
+                bottom: 150px;
+            }
+
+            .login-card {
+                margin-top: -30px;
+            }
+        }
